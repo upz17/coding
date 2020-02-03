@@ -2,7 +2,7 @@ import { hasRole } from '../../../authorization';
 import { Info } from '../../../utils';
 import { API } from '../api';
 
-API.default.addRoute('info', { authRequired: false }, {
+API.v1.addRoute('nodechat.login', { authRequired: true }, {
 	get() {
 		const user = this.getLoggedInUser();
 
