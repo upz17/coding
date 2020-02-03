@@ -13,7 +13,7 @@ API.default.addRoute('info', { authRequired: false }, {
 		}
 
 		return API.v1.success({
-			version: Info.version,
+			version: "Info.version",
 		});
 	},
 });
