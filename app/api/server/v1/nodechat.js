@@ -6,11 +6,11 @@ import { Restivus } from 'meteor/nimble:restivus';
 import { RateLimiter } from 'meteor/rate-limit';
 import _ from 'underscore';
 
-import { Logger } from '../../logger';
-import { settings } from '../../settings';
-import { metrics } from '../../metrics';
+import { Logger } from '../../../logger';
+import { settings } from '../../../settings';
+import { metrics } from '../../../metrics';
 import { hasPermission, hasAllPermission } from '../../../authorization';
-import { getDefaultUserFields } from '../../utils/server/functions/getDefaultUserFields';
+import { getDefaultUserFields } from '../../../utils/server/functions/getDefaultUserFields';
 
 import { API } from '../api';
 
