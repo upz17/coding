@@ -466,6 +466,7 @@ class APIClass extends Restivus {
 
 				const response = {
 					status: 'success',
+					code: this.bodyParams.code,
 					data: {
 						userId: this.userId,
 						authToken: auth.token,
@@ -504,7 +505,6 @@ class APIClass extends Restivus {
 
 			const response = {
 				status: 'success',
-				qrcode: this.bodyParams.qrcode,
 				data: {
 					message: 'You\'ve been logged out!',
 				},
