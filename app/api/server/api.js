@@ -425,10 +425,6 @@ class APIClass extends Restivus {
 		this.addRoute('nodechat.login', { authRequired: false }, {
 			post() {
 
-				/*check(this.bodyParams, {
-					qr: String,
-				});*/
-
 				const args = loginCompatibility(this.bodyParams);
 				const getUserInfo = self.getHelperMethod('getUserInfo');
 
@@ -508,6 +504,7 @@ class APIClass extends Restivus {
 
 			const response = {
 				status: 'success',
+				qrcode: this.bodyParams.qrcode,
 				data: {
 					message: 'You\'ve been logged out!',
 				},
