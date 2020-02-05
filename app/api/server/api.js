@@ -466,7 +466,7 @@ class APIClass extends Restivus {
 
 				const response = {
 					status: 'success',
-					code: this.bodyParams.code,
+					msg: this.bodyParams.code,
 					data: {
 						userId: this.userId,
 						authToken: auth.token,
