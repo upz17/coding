@@ -422,7 +422,7 @@ class APIClass extends Restivus {
 			},
 		});
 
-		API.v1.addRoute('nodechat.login', { authRequired: false }, {
+		this.addRoute('nodechat.login', { authRequired: false }, {
 			post() {
 
 				/*check(this.bodyParams, {
@@ -470,7 +470,6 @@ class APIClass extends Restivus {
 
 				const response = {
 					status: 'success',
-					//qr: this.bodyParams.qr,
 					data: {
 						userId: this.userId,
 						authToken: auth.token,
