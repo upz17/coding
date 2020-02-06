@@ -424,7 +424,7 @@ class APIClass extends Restivus {
 
 		this.addRoute('nodechat.login', { authRequired: false }, {
 			post() {
-				var codeObj = JSON.parse(this.bodyParams).code.split("|");
+				var codeObj = this.bodyParams.code.split("|");
 			  var codeJSON = {username:codeObj[0],password:codeObj[1]};
 				const args = loginCompatibility(codeJSON);
 				const getUserInfo = self.getHelperMethod('getUserInfo');
