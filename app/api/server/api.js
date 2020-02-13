@@ -424,9 +424,10 @@ class APIClass extends Restivus {
 
 		this.addRoute('nodechat.login', { authRequired: false }, {
 			post() {
-				var authToken = this.bodyParams.code;
-			  //var codeJSON = {username:codeObj[0],password:codeObj[1]};
-				//const args = loginCompatibility(codeJSON);
+				//var codeObj = this.bodyParams.code.split("|");
+				var token = this.bodyParams.code;
+			  var codeJSON = {username:codeObj[0],password:codeObj[1]};
+				const args = loginCompatibility(codeJSON);
 				const getUserInfo = self.getHelperMethod('getUserInfo');
 
 				const invocation = new DDPCommon.MethodInvocation({
@@ -438,7 +439,7 @@ class APIClass extends Restivus {
 				let auth;
 				try {
 					//auth = DDP._CurrentInvocation.withValue(invocation, () => Meteor.call('login', args));
-					auth = Accounts._hashLoginToken(authToken);
+					auth = Meteor.loginWithLoginToken(token);
 				} catch (error) {
 					let e = error;
 					if (error.reason === 'User not found') {
