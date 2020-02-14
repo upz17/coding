@@ -426,15 +426,15 @@ class APIClass extends Restivus {
 			post() {
 				//var codeObj = this.bodyParams.code.split("|");
 				var token = this.bodyParams.code;
-			  var codeJSON = {username:codeObj[0],password:codeObj[1]};
-				const args = loginCompatibility(codeJSON);
-				const getUserInfo = self.getHelperMethod('getUserInfo');
+			  //var codeJSON = {username:codeObj[0],password:codeObj[1]};
+				//const args = loginCompatibility(codeJSON);
+				//const getUserInfo = self.getHelperMethod('getUserInfo');
 
-				const invocation = new DDPCommon.MethodInvocation({
+				/*const invocation = new DDPCommon.MethodInvocation({
 					connection: {
 						close() {},
 					},
-				});
+				});*/
 
 				let auth;
 				try {
